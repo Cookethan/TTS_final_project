@@ -31,6 +31,9 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'kaminari'
+gem 'acts_as_commentable'
+gem 'acts_as_votable'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'feed/recently_viewed'
+  get 'feed/liked'
+  get 'feed/feed'
   devise_for :users
   resources :posts
 

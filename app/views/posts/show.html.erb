@@ -25,5 +25,19 @@
   <%= @post.genre %>
 </p>
 
+
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+<%= simple_form_for [@post, Comment.new] do |f| %>
+ <div class="field">
+  <%= f.text_area :content, class: "form-control" %>
+ </div>
+ <br>
+ <%= f.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>
+
+<ul>
+<%= render :partial => "comments/comment", :collection => @post.comments %>
+</ul>

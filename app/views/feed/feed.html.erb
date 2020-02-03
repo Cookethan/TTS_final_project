@@ -1,2 +1,18 @@
-<h1>Feed#feed</h1>
-<p>Find me in app/views/feed/feed.html.erb</p>
+<div class="container">
+    <div class="col-md-6">
+        <% @posts.order(id: :desc).limit(15).each do |post|%>
+            <div class=" clearfix">
+            <h2>
+                <%= link_to post.title, post %><br>
+                <small class="author">Submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username unless post.user.blank? %></small>
+            </h2>
+            </div>
+        <% end %>
+    </div>
+    <div class="col-md-6">
+        <h1>Recently viewed:</h1>
+    </div>
+    <div>
+
+    </div>
+</div>

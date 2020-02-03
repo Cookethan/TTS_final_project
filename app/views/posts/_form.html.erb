@@ -22,8 +22,12 @@
   </div>
 
   <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
     <%= form.label :date %>
-    <%= form.select :model_year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %><br>
+    <%= form.select :date, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %><br>
   </div>
 
   <div class="field">

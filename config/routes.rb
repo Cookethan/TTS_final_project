@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   get 'feed/liked'
   get 'feed/feed'
   devise_for :users
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
-  root 'posts#index'
+  resources :comments do
+    resources :comments
+  end
+  root 'feed#feed'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

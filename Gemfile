@@ -34,6 +34,9 @@ gem 'devise'
 gem 'kaminari'
 gem 'acts_as_commentable'
 gem 'acts_as_votable'
+gem 'faker'
+gem 'populator', :github => 'fulvi0/populator'
+gem 'simple_form'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

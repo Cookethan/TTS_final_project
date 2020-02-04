@@ -8,7 +8,7 @@ class FeedController < ApplicationController
   end
 
   def feed
-    @posts = Post.all
+    @posts = Post.all.page(params[:page])
   end
 
   def search

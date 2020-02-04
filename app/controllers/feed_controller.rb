@@ -19,4 +19,5 @@ class FeedController < ApplicationController
       @results = Post.all.where("lower(title) LIKE :search", search: @parameter).or(Post.all.where("lower(artist) LIKE :search", search: @parameter)).or(Post.all.where("lower(genre) LIKE :search", search: @parameter)).or(Post.all.where("lower(date) LIKE :search", search: @parameter)).or(Post.all.where("lower(medium) LIKE :search", search: @parameter))
     end
   end
+
 end

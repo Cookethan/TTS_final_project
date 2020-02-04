@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'feed/recently_viewed'
   get 'feed/liked'
   get 'feed/feed'
+  post 'saved' => 'posts#save'
   get '/search' => 'feed#search', :as => 'search_page'
   devise_for :users
   resources :posts do

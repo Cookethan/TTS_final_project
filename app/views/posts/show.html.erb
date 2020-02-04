@@ -31,6 +31,7 @@
 </p>
 
 
+<%= button_to 'save', {:controller => "posts", :action => "save", :id => @post.id, :user_id => current_user.id} , :method=>:post  %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

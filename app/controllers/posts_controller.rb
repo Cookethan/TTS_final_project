@@ -22,6 +22,11 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def save
+    @post = Post.find(params[:id])
+    saved_post = SavedPost.new(post_id: @post.id, user_id: current_user.id)
+  end
+
   # POST /posts
   # POST /posts.json
   def create

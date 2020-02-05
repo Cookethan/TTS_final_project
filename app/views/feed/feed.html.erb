@@ -11,10 +11,16 @@
         <%= paginate @posts %>
     </div>
     <div class="col-md-6">
-        <h1>Saved posts:</h1>
-        <%= @saved_posts.order(created_at: :desc).each do |post|%>
-        <%= link_to post.title, post %><br>
-        <% end %>
+            <h1>Saved posts:</h1>
+            <% @saved.order(created_at: :desc).each do |post|%>
+                <div class="clearfix">
+                <h2>
+                    <%= link_to post.title, post %><br>
+                    <small class="author">Saved <%= time_ago_in_words(post.created_at) %> ago</small>
+                </h2>
+                </div>
+            <% end %>
+            
     </div>  
     
 </div>

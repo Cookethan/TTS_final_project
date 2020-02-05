@@ -9,6 +9,8 @@ class FeedController < ApplicationController
 
   def feed
     @posts = Post.all.page(params[:page])
+    #@saved_posts = SavedPost.where(user_id: current_user.id )
+    @saved_posts = Post.joins(:saved_posts).where(saved_posts:{user_id: current_user.id})
   end
 
   def search

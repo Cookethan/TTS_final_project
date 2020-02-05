@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   def save
     @post = Post.find(params[:id])
     saved_post = SavedPost.new(post_id: @post.id, user_id: current_user.id)
+    saved_post.save
   end
 
   # POST /posts

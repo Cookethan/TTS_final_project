@@ -11,9 +11,10 @@
         <%= paginate @posts %>
     </div>
     <div class="col-md-6">
-        <h1>Recently viewed:</h1>
-    </div>
-    <div>
-        <h1>Saved Posts:</h1>
-    </div>
+        <h1>Saved posts:</h1>
+        <%= @saved_posts.order(created_at: :desc).each do |post|%>
+        <%= link_to post.title, post %><br>
+        <% end %>
+    </div>  
+    
 </div>
